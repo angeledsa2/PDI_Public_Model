@@ -1,0 +1,1756 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "cloudwatch"
+          },
+          "enable": true,
+          "iconColor": "red",
+          "name": "PDI Critical Points",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [
+              "pdi_critical"
+            ],
+            "type": "tags"
+          }
+        },
+        {
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "beegbkphv5iiof"
+          },
+          "enable": true,
+          "iconColor": "purple",
+          "name": "Astrological Events",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "source": "pdi.astrological.transit",
+            "type": "source"
+          }
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 9,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Overview of the Probability Disruption Index and its state",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 10,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#41157f"
+                },
+                {
+                  "color": "dark-blue",
+                  "value": 1.6
+                },
+                {
+                  "color": "dark-green",
+                  "value": 3.6
+                },
+                {
+                  "color": "dark-yellow",
+                  "value": 5.6
+                },
+                {
+                  "color": "semi-dark-purple",
+                  "value": 7.6
+                },
+                {
+                  "color": "dark-red",
+                  "value": 9.6
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 6,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "minVizHeight": 75,
+          "minVizWidth": 75,
+          "orientation": "vertical",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto",
+          "text": {}
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          }
+        ],
+        "title": "Current PDI",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "from": 9.6,
+                  "result": {
+                    "color": "dark-red",
+                    "index": 0,
+                    "text": "Probability Collapse Point"
+                  },
+                  "to": 10
+                },
+                "type": "range"
+              },
+              {
+                "options": {
+                  "from": 7.6,
+                  "result": {
+                    "color": "purple",
+                    "index": 1,
+                    "text": "High Coherence Field"
+                  },
+                  "to": 9.6
+                },
+                "type": "range"
+              },
+              {
+                "options": {
+                  "from": 5.6,
+                  "result": {
+                    "color": "semi-dark-yellow",
+                    "index": 2,
+                    "text": "Resonant Flow State"
+                  },
+                  "to": 7.6
+                },
+                "type": "range"
+              },
+              {
+                "options": {
+                  "from": 2.6,
+                  "result": {
+                    "color": "green",
+                    "index": 3,
+                    "text": "Harmonization"
+                  },
+                  "to": 5.6
+                },
+                "type": "range"
+              },
+              {
+                "options": {
+                  "from": 1.6,
+                  "result": {
+                    "color": "#0010ff",
+                    "index": 4,
+                    "text": "Probability Dispersion"
+                  },
+                  "to": 3.6
+                },
+                "type": "range"
+              },
+              {
+                "options": {
+                  "from": 0,
+                  "result": {
+                    "color": "#24004b",
+                    "index": 5,
+                    "text": "Quantum Inertia Field"
+                  },
+                  "to": 1.6
+                },
+                "type": "range"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "blue"
+                },
+                {
+                  "color": "yellow",
+                  "value": 1.6
+                },
+                {
+                  "color": "green",
+                  "value": 3.6
+                },
+                {
+                  "color": "orange",
+                  "value": 5.6
+                },
+                {
+                  "color": "purple",
+                  "value": 7.6
+                },
+                {
+                  "color": "red",
+                  "value": 9.6
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 11,
+          "x": 6,
+          "y": 0
+        },
+        "id": 10,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          }
+        ],
+        "title": "Current Coherence State",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Rate of change in PDI helps predict transitions between coherence states",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "yellow",
+                  "value": 0.2
+                },
+                {
+                  "color": "red",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 6,
+          "x": 17,
+          "y": 0
+        },
+        "id": 100,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "vertical",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {
+            "valueSize": 60
+          },
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "PDI_Rate_Of_Change",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          }
+        ],
+        "title": "PDI Rate of Change",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "IFD Phase based on research model tracking the component activation stages",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [
+              {
+                "options": {
+                  "1": {
+                    "color": "dark-blue",
+                    "index": 0,
+                    "text": "Phase 1: Incubation (Solar Minimum)"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "2": {
+                    "color": "blue",
+                    "index": 1,
+                    "text": "Phase 2: Initiation (Early Rising Phase)"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "3": {
+                    "color": "green",
+                    "index": 2,
+                    "text": "Phase 3: Expansion (Rising Phase)"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "4": {
+                    "color": "yellow",
+                    "index": 3,
+                    "text": "Phase 4: Euphoria & Tension (Solar Maximum Approach)"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "5": {
+                    "color": "semi-dark-red",
+                    "index": 4,
+                    "text": "Phase 5: Inflection (Solar Maximum/Polarity Reversal)"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "6": {
+                    "color": "dark-orange",
+                    "index": 5,
+                    "text": "Phase 6: Contraction (Early Declining Phase)"
+                  }
+                },
+                "type": "value"
+              },
+              {
+                "options": {
+                  "7": {
+                    "color": "purple",
+                    "index": 6,
+                    "text": "Phase 7: Reset (Late Declining Phase)"
+                  }
+                },
+                "type": "value"
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 23,
+          "x": 0,
+          "y": 7
+        },
+        "id": 101,
+        "options": {
+          "colorMode": "background",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {
+            "titleSize": 18,
+            "valueSize": 18
+          },
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "CEIL((solar_activity_solar_flux + GAMI*2 + CERI*3 + AISI*2) / 8) + 3",
+            "id": "",
+            "label": "",
+            "logGroups": [],
+            "metricEditorMode": 1,
+            "metricName": "",
+            "metricQueryType": 0,
+            "namespace": "",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": ""
+          }
+        ],
+        "title": "Current IFD Phase",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "PDI value over time with threshold indicators. Shows transitions between coherence states.",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic",
+              "seriesBy": "last"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisGridShow": true,
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 31,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineStyle": {
+                "fill": "solid"
+              },
+              "lineWidth": 3,
+              "pointSize": 3,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "dashed+area"
+              }
+            },
+            "mappings": [],
+            "max": 10,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "#50148c1a"
+                },
+                {
+                  "color": "semi-dark-blue",
+                  "value": 1.6
+                },
+                {
+                  "color": "semi-dark-green",
+                  "value": 3.6
+                },
+                {
+                  "color": "rgba(237, 199, 37, 0.1)",
+                  "value": 5.6
+                },
+                {
+                  "color": "rgba(240, 73, 19, 0.1)",
+                  "value": 7.6
+                },
+                {
+                  "color": "rgba(176, 10, 10, 0.1)",
+                  "value": 9.6
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Base PDI"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-purple",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.lineStyle",
+                  "value": {
+                    "dash": [10, 10],
+                    "fill": "dash"
+                  }
+                },
+                {
+                  "id": "custom.lineWidth",
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 23,
+          "x": 0,
+          "y": 11
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [
+              "mean",
+              "min",
+              "max",
+              "lastNotNull"
+            ],
+            "displayMode": "table",
+            "placement": "bottom",
+            "showLegend": true,
+            "sortBy": "Min",
+            "sortDesc": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "alias": "PDI Value",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "PDI Value",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "Base PDI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "Base PDI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "Base_PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "B",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          }
+        ],
+        "title": "Coherence Field Transition Analysis",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Component dominance tracking showing which components are currently in dominant, ascendant, or transitional phases",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "fillOpacity": 70,
+              "lineWidth": 0,
+              "spanNulls": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent"
+                },
+                {
+                  "color": "#7c20b2",
+                  "value": 0.15
+                },
+                {
+                  "color": "#b26c20",
+                  "value": 0.3
+                },
+                {
+                  "color": "#20b25c",
+                  "value": 0.5
+                },
+                {
+                  "color": "#3320b2",
+                  "value": 0.7
+                },
+                {
+                  "color": "#b22020",
+                  "value": 0.9
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 8,
+          "x": 0,
+          "y": 18
+        },
+        "id": 102,
+        "options": {
+          "alignValue": "center",
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "mergeValues": true,
+          "rowHeight": 0.95,
+          "showValue": "always",
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "CERI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "CERI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "CERI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "GAMI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "GAMI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "GAMI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "B",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "SOLI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "SOLI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "SOLI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "C",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "LUMI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "LUMI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "LUMI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "D",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "AISI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "AISI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "AISI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "E",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          }
+        ],
+        "title": "Component Dominance Cycle Tracking",
+        "type": "state-timeline"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Component Interaction Matrix showing relationships between components based on the IFD research",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "cellOptions": {
+                "mode": "gradient",
+                "type": "color-text"
+              },
+              "inspect": false
+            },
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red"
+                },
+                {
+                  "color": "semi-dark-red",
+                  "value": -0.6
+                },
+                {
+                  "color": "red",
+                  "value": -0.3
+                },
+                {
+                  "color": "dark-orange",
+                  "value": -0.1
+                },
+                {
+                  "color": "gray",
+                  "value": -0.05
+                },
+                {
+                  "color": "dark-green",
+                  "value": 0.05
+                },
+                {
+                  "color": "green",
+                  "value": 0.1
+                },
+                {
+                  "color": "semi-dark-green",
+                  "value": 0.3
+                },
+                {
+                  "color": "dark-green",
+                  "value": 0.6
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 9,
+          "x": 8,
+          "y": 18
+        },
+        "id": 103,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "frameIndex": 0,
+          "showHeader": true
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "SELECT\n  \"Component Pair\" as \"Component Relationship\",\n  \"Correlation\" as \"Correlation Strength\",\n  \"Effect\" as \"Effect Description\"\nFROM (\n  SELECT\n    'SOLI ↔ GAMI' as \"Component Pair\",\n    -0.65 as \"Correlation\",\n    'Strongly inverse, one rises as other falls' as \"Effect\"\n  UNION ALL SELECT\n    'SOLI ↔ CERI' as \"Component Pair\",\n    0.60 as \"Correlation\",\n    'Strongly positive, rise and fall together' as \"Effect\"\n  UNION ALL SELECT\n    'GAMI ↔ CERI' as \"Component Pair\",\n    -0.20 as \"Correlation\",\n    'Moderately inverse, mild tension' as \"Effect\"\n  UNION ALL SELECT\n    'SOLI ↔ LUMI' as \"Component Pair\",\n    0.15 as \"Correlation\",\n    'Mildly positive, weak synchronization' as \"Effect\"\n  UNION ALL SELECT\n    'GAMI ↔ LUMI' as \"Component Pair\",\n    0.00 as \"Correlation\",\n    'Variable, context-dependent relation' as \"Effect\"\n  UNION ALL SELECT\n    'AISI ↔ Others' as \"Component Pair\",\n    -0.50 as \"Correlation\",\n    'Typically inverse, dominates during periods of high volatility' as \"Effect\"\n)",
+            "id": "",
+            "label": "",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 3,
+            "metricName": "",
+            "metricQueryType": 0,
+            "namespace": "",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sql": {
+              "groupByKeys": [],
+              "groupByOptions": [],
+              "groupBy": false
+            },
+            "sqlExpression": "",
+            "statistic": ""
+          }
+        ],
+        "title": "Component Interaction Matrix",
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Visualization of the Coherence Oscillation Corridor showing current position within the corridor",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "blue"
+                },
+                {
+                  "color": "green",
+                  "value": 3
+                },
+                {
+                  "color": "yellow",
+                  "value": 5
+                },
+                {
+                  "color": "orange",
+                  "value": 7
+                },
+                {
+                  "color": "red",
+                  "value": 9
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 6,
+          "x": 17,
+          "y": 18
+        },
+        "id": 104,
+        "options": {
+          "displayMode": "lcd",
+          "minVizHeight": 10,
+          "minVizWidth": 0,
+          "orientation": "vertical",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true,
+          "valueMode": "color"
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "Current PDI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "Current PDI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "Corridor Lower Bound",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "MIN([MIN(m1), MAX(m1)]) - 1.5",
+            "id": "",
+            "label": "Corridor Lower Bound",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 1,
+            "metricName": "PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "B",
+            "region": "us-east-1",
+            "sqlExpression": ""
+          },
+          {
+            "alias": "Corridor Upper Bound",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "MAX([MIN(m1), MAX(m1)]) + 1.5",
+            "id": "",
+            "label": "Corridor Upper Bound",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 1,
+            "metricName": "PDI_Value",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "C",
+            "region": "us-east-1",
+            "sqlExpression": ""
+          }
+        ],
+        "title": "Coherence Oscillation Corridor",
+        "type": "bargauge"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 27
+        },
+        "id": 30,
+        "panels": [],
+        "title": "Component Analysis",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Current state of all sub-indices contributing to the PDI with threshold indicators",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "CERI"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "blue",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-blue"
+                      },
+                      {
+                        "color": "semi-dark-blue",
+                        "value": 0.5
+                      },
+                      {
+                        "color": "blue",
+                        "value": 0.8
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "min",
+                  "value": -1
+                },
+                {
+                  "id": "max",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "GAMI"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "green",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-green"
+                      },
+                      {
+                        "color": "semi-dark-green",
+                        "value": 0.5
+                      },
+                      {
+                        "color": "green",
+                        "value": 0.8
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "min",
+                  "value": 0
+                },
+                {
+                  "id": "max",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "LUMI"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#7b7b7b",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "rgba(0, 47, 94, 0.7)"
+                      },
+                      {
+                        "color": "text",
+                        "value": 0.5
+                      },
+                      {
+                        "color": "#989898",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "min",
+                  "value": 0
+                },
+                {
+                  "id": "max",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "SOLI"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "yellow",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-yellow"
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 0.5
+                      },
+                      {
+                        "color": "super-light-yellow",
+                        "value": 0.8
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "min",
+                  "value": 0
+                },
+                {
+                  "id": "max",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "AISI"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "semi-dark-purple",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-purple"
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": -1
+                      },
+                      {
+                        "color": "dark-purple",
+                        "value": -0.5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "min",
+                  "value": -2
+                },
+                {
+                  "id": "max",
+                  "value": 1
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 0,
+          "y": 28
+        },
+        "id": 4,
+        "options": {
+          "displayMode": "gradient",
+          "maxVizHeight": 300,
+          "minVizHeight": 10,
+          "minVizWidth": 0,
+          "namePlacement": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true,
+          "sizing": "auto",
+          "valueMode": "color"
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "alias": "CERI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "CERI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "CERI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "GAMI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "GAMI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "GAMI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "B",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "LUMI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "LUMI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "LUMI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "C",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "alias": "MSRI",
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "id": "",
+            "label": "SOLI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "SOLI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "D",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          },
+          {
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "",
+            "hide": false,
+            "id": "",
+            "label": "AISI",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "AISI",
+            "metricQueryType": 0,
+            "namespace": "PDI_Metrics",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "F",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": "Average"
+          }
+        ],
+        "title": "Component Values",
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "beegbkphv5iiof"
+        },
+        "description": "Component Activation Probability based on current thresholds from IFD research",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "cellOptions": {
+                "mode": "gradient",
+                "type": "color-background"
+              },
+              "inspect": false
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "yellow",
+                  "value": 20
+                },
+                {
+                  "color": "orange",
+                  "value": 40
+                },
+                {
+                  "color": "red",
+                  "value": 60
+                },
+                {
+                  "color": "purple",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 11,
+          "x": 12,
+          "y": 44
+        },
+        "id": 106,
+        "options": {
+          "cellHeight": "md",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
+        },
+        "pluginVersion": "10.4.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "cloudwatch",
+              "uid": "beegbkphv5iiof"
+            },
+            "dimensions": {},
+            "expression": "SELECT\n  \"Component\" as \"Component\",\n  \"Threshold\" as \"Threshold Value\",\n  \"Proximity\" as \"Activation Proximity %\",\n  \"Effect\" as \"Effect on Coherence\"\nFROM (\n  SELECT\n    'CERI' as \"Component\",\n    '0.62' as \"Threshold\",\n    MIN(MAX(CERI/0.62*100, 0), 100) as \"Proximity\",\n    'High: Coherence resonance effects' as \"Effect\"\n  UNION ALL SELECT\n    'GAMI' as \"Component\",\n    '0.48' as \"Threshold\",\n    MIN(MAX(GAMI/0.48*100, 0), 100) as \"Proximity\",\n    'Medium: Geomagnetic perturbation' as \"Effect\"\n  UNION ALL SELECT\n    'SOLI' as \"Component\",\n    '0.80' as \"Threshold\",\n    MIN(MAX(SOLI/0.80*100, 0), 100) as \"Proximity\",\n    'High: Solar amplification' as \"Effect\"\n  UNION ALL SELECT\n    'AISI' as \"Component\",\n    '0.00' as \"Threshold\",\n    IF(AISI < 0, 0, MIN(AISI/0.3*100, 100)) as \"Proximity\",\n    'Medium: Astrological modulation' as \"Effect\"\n)",
+            "id": "",
+            "label": "",
+            "logGroups": [],
+            "matchExact": true,
+            "metricEditorMode": 3,
+            "metricName": "",
+            "metricQueryType": 0,
+            "namespace": "",
+            "period": "",
+            "queryMode": "Metrics",
+            "refId": "A",
+            "region": "us-east-1",
+            "sqlExpression": "",
+            "statistic": ""
+          }
+        ],
+        "title": "Component Threshold Proximity",
+        "type": "table"
+      }
+    ],
+    "schemaVersion": 39,
+    "tags": [
+      "pdi",
+      "monitoring",
+      "ifd"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "24h",
+            "value": "24h"
+          },
+          "description": "Time range for analysis",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Analysis Period",
+          "multi": false,
+          "name": "time_range",
+          "options": [
+            {
+              "selected": true,
+              "text": "24h",
+              "value": "24h"
+            },
+            {
+              "selected": false,
+              "text": "3d",
+              "value": "3d"
+            },
+            {
+              "selected": false,
+              "text": "7d",
+              "value": "7d"
+            },
+            {
+              "selected": false,
+              "text": "14d",
+              "value": "14d"
+            },
+            {
+              "selected": false,
+              "text": "30d",
+              "value": "30d"
+            }
+          ],
+          "query": "24h,3d,7d,14d,30d",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-24h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ]
+    },
+    "timezone": "",
+    "title": "Probability Disruption Index (PDI) Dashboard 2.0",
+    "uid": "pdi-ifd-dashboard-v2",
+    "version": 1,
+    "weekStart": ""
+  }
+  
